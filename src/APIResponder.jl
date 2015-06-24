@@ -91,7 +91,7 @@ function process(conn::APIResponder)
             if ctrlcmd === :terminate
                 break
             elseif ctrlcmd === :terminate_tell_who
-                respond(conn, Nullable{APISpec}(), myid())
+                respond(conn, Nullable{APISpec}(), :success, myid())
                 break
             else
                 err("invalid control command $cmd")
